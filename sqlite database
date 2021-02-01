@@ -1,0 +1,33 @@
+database query:
+-----------------
+sqlitte>.open univ.db
+sqlite>.tables
+sqlite> create table dept(deptno integer primary key not null unique ,dname text);
+sqlite>create table student(rollno integer primary key,name text, city text,deptno integer,foreginkey(deptno)references dept(deptno));
+sqlite>.tables
+dept   student
+insert Query:
+--------------
+sqlite>insert into dept values(10,'BCA');
+sqlite>insert into student values(1,'john','delhi',10,);
+---------------------------------------------------------
+Select  Query
+------------
+select*from student
+1|john|delhi||10|
+select name from student;
+select name from dept;
+select rollno fro student
+select name fro student where deptno>=30 and city="delhi";
+select *from student 
+-----------------------------
+update Query
+------------
+update dept set dname='EEE' where deptno=10;
+update dept set deptno=10 where dname='BCA';
+Delete Query
+------------
+delete from dept where deptno>=50;
+delete from student where city='delhi'
+delete *from student;
+-------------------------
